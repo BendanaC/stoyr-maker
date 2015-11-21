@@ -19,7 +19,7 @@ function updateView()
   pageOptions.text('');
   for(var id in currentPage.options){
     pageOptions.append(
-      '<button onclick="changePage(' + currentPage.options[id].nextPage + ')" class="btn btn-primary">' + currentPage.options[id].text + '</button>'
+      '<button onclick="changePage(' + currentPage.options[id].nextPage + ')" class="btn btn-primary">' + currentPage.options[id].text + '</button>' + '<br>' + '<br>'
     );
   }
 }
