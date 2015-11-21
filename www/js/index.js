@@ -8,16 +8,16 @@ updateView();
 
 function updateView()
 { 
-  var currentPage = story[idCurrent];
   var pageNumber = $('#pageNumber');
   var pageText = $('#pageText');
   var pageOptions = $('#pageOptions');
+  var currentPage = story[idCurrent];
   
   pageNumber.text(storage.getItem('page'));
   pageText.text(currentPage.text);
 
   pageOptions.text('');
-  for(var id in currentPage.options ){
+  for(var id in currentPage.options){
     pageOptions.append(
       '<button onclick="changePage(' + currentPage.options[id].nextPage + ')" class="btn btn-primary">' + currentPage.options[id].text + '</button>'
     );
