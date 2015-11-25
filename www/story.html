@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-tap-highlight" content="no" />
+      <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+      <link rel="stylesheet" type="text/css" href="css/index.css" />
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+      <title>Story Maker</title>
+   </head>
+   <body>
+      <div class="app container">
+         <div id="head">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="panel panel-info">
+                     <div class="panel-heading">
+                        <h3 id="storyTittle" class="panel-title"></h3>
+                     </div>
+                     <div class="panel-body">
+                        <div id="pageContent" class="jumbotron">
+                           <p id="pageText"></p>
+                           <div class="row">
+                              <div id="pageOptions"></div>
+                           </div>
+                           <div class="row" style="margin-top:10px">
+                              <div class="col-sm-12">
+                                 <p style="font-size:15px" id="pageNumber"></p>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-offset-3 col-sm-6">
+                                 <a class="btn btn-warning btn-block" href="index.html">Go back to Menu</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/story.js"></script>
+   <script type="text/javascript" src="js/viewStory.js"></script>
+</html>
