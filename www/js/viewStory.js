@@ -1,4 +1,4 @@
-var storage = window.localStorage;
+﻿var storage = window.localStorage;
 
 // Setup
 var storyToTell = getParameter('story'); //Get story
@@ -32,7 +32,7 @@ function updateView()
    pageOptions.text(''); //Reset options
    for(var id in storyPage.options){
       pageOptions.append(
-         '<div class="col-sm-6">' +
+         '<div class="col-sm-6" style="margin-top: 4%; margin-bottom: 4%">' +
          '<button onclick="changePage(' + storyPage.options[id].nextPage +
          ')" class="btn btn-primary btn-block">' + storyPage.options[id].text +
          '</button>' +

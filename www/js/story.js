@@ -1,4 +1,4 @@
-var story = [
+﻿var story = [
    {
       id: 0,
       name: 'Such story, very interesting',
@@ -7,7 +7,7 @@ var story = [
             pageNumber: 0,
             text: 'Escoja el comienzo de su historia',
             options:[
-               {nextPage: 1, text: 'Había una vez un perrito Shiba Inu...'},
+               {nextPage: 1, text: 'Un perrito Shiba Inu...'},
                {nextPage: 5, text: 'Ir al segundo final'},
                {nextPage: 4, text: 'Ir al primer final'}
             ]
@@ -16,8 +16,8 @@ var story = [
             pageNumber: 1,
             text: 'De color amarillo y joven que le gustaba jugar con pelotas de tennis y con su amo Richard Gere.',
             options:[
-               {nextPage: 2, text: 'Un día decidió no hacer nada más que dormir...'},
-               {nextPage: 3, text: 'Su dueño cayó en una enfermedad muy grave y tuvo que ir al hospital...'}
+               {nextPage: 2, text: 'Un día decidió no hacer nada'},
+               {nextPage: 3, text: 'Su dueño se enfermó'}
             ]
          },
          {
@@ -32,8 +32,8 @@ var story = [
             pageNumber: 3,
             text: 'Cayó en una depresión tan terrible que no podía levantarse de su cama',
             options:[
-               {nextPage: 5, text: 'Por lo cual decidió no hacer nada nunca más...'},
-               {nextPage: 4, text: 'Hizo el esfuerzo de levantarse y hacer sus quehaceres'}
+               {nextPage: 5, text: 'Decidió no hacer nada'},
+               {nextPage: 4, text: 'Se levantó'}
             ]
          },
          {
@@ -61,7 +61,7 @@ var story = [
             pageNumber: 0,
             text: 'Escoja el comienzo de su historia',
             options:[
-               {nextPage: 1, text: 'Érase una vez un estudiante de universidad...'},
+               {nextPage: 1, text: 'Un universitario...'},
                {nextPage: 4, text: 'Ir al primer final'},
                {nextPage: 5, text: 'Ir al segundo final'}
             ]
@@ -70,8 +70,8 @@ var story = [
             pageNumber: 1,
             text: 'Que estaba a final de cuatrimestre y no daba más. Algo tenía que hacer, ¿o no?',
             options:[
-               {nextPage: 2, text: 'Dejar la universidad y tomar un cuatrimestre sabático...'},
-               {nextPage: 3, text: 'Ponerle aún más empeño a la universidad'}
+               {nextPage: 2, text: 'Dejar la universidad'},
+               {nextPage: 3, text: 'Ponerle ganas'}
             ]
          },
          {
@@ -86,8 +86,8 @@ var story = [
             pageNumber: 3,
             text: 'Cayó en una depresión tan terrible que no podía levantarse de su cama',
             options:[
-               {nextPage: 5, text: 'Por lo cual decidió no hacer nada nunca más...'},
-               {nextPage: 4, text: 'Hizo el esfuerzo de levantarse y hacer sus quehaceres'}
+               {nextPage: 5, text: 'Decidió no hacer nada'},
+               {nextPage: 4, text: 'Se levantó'}
             ]
          },
          {

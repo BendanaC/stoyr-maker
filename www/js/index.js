@@ -29,14 +29,14 @@ function menuCreation()
       for(var pos in story)
       {
          selectMenu.append(
-         '<div class="col-sm-12">' +
+         '<div class="col-sm-12" style="margin-top:2%; margin-bottom: 2%">' +
          '<a href="story.html?story=' + story[pos].id + '" class="btn btn-success btn-block">' + story[pos].name + '</a>' +
          '</div>'
          );
       }
       goToMenu.append(
          '<div class="row">' +
-         '<div class="col-sm-12">' +
+         '<div class="col-sm-12" style="margin-bottom: 2%">' +
          '<a class="btn btn-warning btn-block" href="index.html">Go back to Menu</a>' +
          '</div>' +
          '</div>'
@@ -47,7 +47,7 @@ function menuCreation()
       for(var num in menuOptions)
       {
          selectMenu.append(
-         '<div class="col-sm-12">' +
+         '<div class="col-sm-12" style="margin-bottom: 2%; margin-top: 2%">' +
          '<button onclick="changePage(' + menuOptions[num].page + ')" class="btn btn-info btn-block">' + menuOptions[num].bText + '</a>' +
          '</div>'
          );
