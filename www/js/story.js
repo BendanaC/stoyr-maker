@@ -4,7 +4,9 @@ var story = [
     text: 'Lets start our first story!!',
     options:[
       {nextPage: 1, text: 'Start!'},
-      {nextPage: 0, text: 'Do not start :('}
+      {nextPage: 0, text: 'Do not start :('},
+      {nextPage: 2, text: 'Go to the end'},
+      {nextPage: 1, text: 'Yes lets start'}
     ]
   },
   {
