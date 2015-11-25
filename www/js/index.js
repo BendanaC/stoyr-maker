@@ -1,50 +1,64 @@
 var storage = window.localStorage;
 
 // Setup
-var idCurrent = storage.getItem('page') ? storage.getItem('page') : 0;
-storage.setItem('page', idCurrent);
+var pageView = storage.getItem('menuPage') ? storage.getItem('menuPage') : 0;
+storage.setItem('menuPage', pageView);
 
-updateView();
+menuCreation();
 
-function updateView()
+// Set menu options
+function menuCreation()
 {
-   var pageNumber = $('#pageNumber');
-   var pageText = $('#pageText');
-   var pageOptions = $('#pageOptions');
-   var pageOptionsLast = $('#pageOptionsLast');
-   var currentPage = story[idCurrent];
-   var counter = 1;
+   var selectMenu = $('#selectMenu');
+   var exitContent = $('#exitContent');
+   var goToMenu = $('#goToMenu');
 
-   pageNumber.text(storage.getItem('page'));
-   pageText.text(currentPage.text);
-
-   pageOptions.text('');
-   pageOptionsLast.text('');
-   for(var id in currentPage.options){
-     if(counter < 3)
-     {
-         pageOptions.append(
-         '<div class="col-sm-6">' +
-         '<button onclick="changePage(' + currentPage.options[id].nextPage + ')" class="btn btn-primary btn-block">' + currentPage.options[id].text + '</button>' +
+   selectMenu.text('');
+   goToMenu.text('');
+   if(pageView === 3)
+   {
+      var exitText = 'Nos vemos pronto!!'
+      exitContent.append(
+         '<div class="jumbotron">' +
+         '<h3>' + exitText + '</div>' +
+         '</div>'
+      );
+   }
+   else if(pageView === 1)
+   {
+      for(var pos in story)
+      {
+         selectMenu.append(
+         '<div class="col-sm-12">' +
+         '<a href="story.html?story=' + story[pos].id + '" class="btn btn-success btn-block">' + story[pos].name + '</a>' +
          '</div>'
          );
-         counter ++;
       }
-      else
+      goToMenu.append(
+         '<div class="row">' +
+         '<div class="col-sm-12">' +
+         '<a class="btn btn-warning btn-block" href="index.html">Go back to Menu</a>' +
+         '</div>' +
+         '</div>'
+      );
+   }
+   else
+   {
+      for(var num in menuOptions)
       {
-         pageOptionsLast.append(
-            '<div class="col-sm-6">' +
-            '<button onclick="changePage(' + currentPage.options[id].nextPage + ')" class="btn btn-primary btn-block">' + currentPage.options[id].text + '</button>' +
-            '</div>'
+         selectMenu.append(
+         '<div class="col-sm-12">' +
+         '<button onclick="changePage(' + menuOptions[num].page + ')" class="btn btn-info btn-block">' + menuOptions[num].bText + '</a>' +
+         '</div>'
          );
       }
    }
 }
 
-function changePage(id)
+function changePage(view)
 {
    // Go to next page
-   idCurrent = id;
-   storage.setItem('page', idCurrent);
-   updateView();
+   pageView = view;
+   storage.setItem('menuPage', pageView);
+   menuCreation();
 }
