@@ -17,7 +17,7 @@ function menuCreation()
    goToMenu.text('');
    if(pageView === 3)
    {
-      var exitText = 'Nos vemos pronto!!'
+      var exitText = 'Nos vemos pronto!!';
       exitContent.append(
          '<div class="jumbotron">' +
          '<h3>' + exitText + '</div>' +
@@ -37,7 +37,7 @@ function menuCreation()
       goToMenu.append(
          '<div class="row">' +
          '<div class="col-sm-12" style="margin-bottom: 2%">' +
-         '<a class="btn btn-warning btn-block" href="index.html">Go back to Menu</a>' +
+         '<a class="btn btn-warning btn-block" href="index.html">Menú Principal</a>' +
          '</div>' +
          '</div>'
       );
