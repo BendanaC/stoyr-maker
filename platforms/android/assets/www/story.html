@@ -15,18 +15,27 @@
          <div id="head">
             <div class="row">
                <div class="col-sm-12">
-                  <div class="panel panel-danger">
+                  <div class="panel panel-info">
                      <div class="panel-heading">
-                        <h3 class="panel-title">Menu</h3>
+                        <h3 id="storyTittle" class="panel-title"></h3>
                      </div>
                      <div class="panel-body">
-                        <div id="menu">
+                        <div id="pageContent" class="jumbotron">
+                           <p id="pageText"></p>
                            <div class="row">
-                              <div id="selectMenu"></div>
+                              <div id="pageOptions"></div>
+                           </div>
+                           <div class="row" style="margin-top:10px">
+                              <div class="col-sm-12">
+                                 <p style="font-size:15px" id="pageNumber"></p>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-offset-3 col-sm-6">
+                                 <a class="btn btn-warning btn-block" href="index.html">Menú Principal</a>
+                              </div>
                            </div>
                         </div>
-                        <div id="exitContent"></div>
-                        <div id="goToMenu"></div>
                      </div>
                   </div>
                </div>
@@ -36,7 +45,6 @@
    </body>
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="js/menu.js"></script>
    <script type="text/javascript" src="js/story.js"></script>
-   <script type="text/javascript" src="js/index.js"></script>
+   <script type="text/javascript" src="js/viewStory.js"></script>
 </html>

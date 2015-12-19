@@ -1,35 +1,64 @@
 var storage = window.localStorage;
-/* asi es como vamos a guardar y obtener cookies:
-    storage.setItem('key','value');
-    storage.getItem('key')
-*/
-// el objeto 'paginas' esta definido en 'paginas.js'
 
-//setup de aplicacion q se ejecuta cuando se abre
-var idxPagActual = storage.getItem('pagina') ? storage.getItem('pagina') : 0;
-storage.setItem('pagina', idxPagActual);//poco eficiente pero meh
+// Setup
+var pageView = storage.getItem('menuPage') ? storage.getItem('menuPage') : 0;
+storage.setItem('menuPage', pageView);
 
-actualizarVistas();
+menuCreation();
 
-function actualizarVistas(){ //actualiza todos los contenidos
-  var numPag        = $('#numPag');
-  var texto         = $('#textoPag');
-  var opcionesPag   = $('#opcionesPag');
-  var paginaActual  = paginas[idxPagActual];
+// Set menu options
+function menuCreation()
+{
+   var selectMenu = $('#selectMenu');
+   var exitContent = $('#exitContent');
+   var goToMenu = $('#goToMenu');
 
-  numPag.text(storage.getItem('pagina')); //seteamos numero de pagina
-  texto.text(paginaActual.texto);
-
-  for(var idx in paginaActual.opciones ){
-    opcionesPag.append(
-      '<button onclick="cambiarPagina('+paginaActual.opciones[idx].vaPag+')" class="btn btn-success">'+paginaActual.opciones[idx].texto+'</button>'
-    );
-  }
+   selectMenu.text('');
+   goToMenu.text('');
+   if(pageView === 3)
+   {
+      var exitText = 'Nos vemos pronto!!';
+      exitContent.append(
+         '<div class="jumbotron">' +
+         '<h3>' + exitText + '</div>' +
+         '</div>'
+      );
+   }
+   else if(pageView === 1)
+   {
+      for(var pos in story)
+      {
+         selectMenu.append(
+         '<div class="col-sm-12" style="margin-top:2%; margin-bottom: 2%">' +
+         '<a href="story.html?story=' + story[pos].id + '" class="btn btn-success btn-block">' + story[pos].name + '</a>' +
+         '</div>'
+         );
+      }
+      goToMenu.append(
+         '<div class="row">' +
+         '<div class="col-sm-12" style="margin-bottom: 2%">' +
+         '<a class="btn btn-warning btn-block" href="index.html">Menú Principal</a>' +
+         '</div>' +
+         '</div>'
+      );
+   }
+   else
+   {
+      for(var num in menuOptions)
+      {
+         selectMenu.append(
+         '<div class="col-sm-12" style="margin-bottom: 2%; margin-top: 2%">' +
+         '<button onclick="changePage(' + menuOptions[num].page + ')" class="btn btn-info btn-block">' + menuOptions[num].bText + '</a>' +
+         '</div>'
+         );
+      }
+   }
 }
 
-//esto nadamas vuelve a cargar todo con la nueva pagina
-function cambiarPagina(idxPagina){
-  idxPagActual = idxPagina;
-  storage.setItem('pagina', idxPagActual);//poco eficiente pero meh
-  location.reload();
+function changePage(view)
+{
+   // Go to next page
+   pageView = view;
+   storage.setItem('menuPage', pageView);
+   menuCreation();
 }
